@@ -1,0 +1,93 @@
+TO  UPDATE A DATA 
+UPDATE TABLNAME SET column1 = value1 WHERE condition;
+UPDATE STUDENT SET STUDENT_CONTACT = 133456 WHERE STU_ID= 11;
+
+-- SHOWING ALL DATABASES 
+   SHOW DATABASES;
+   
+---to delete only data in a table  we use truncate 
+   TRUNCATE TABLE STUDENT;
+--to delete entire structure of a table 
+   DROP TABLE STUDENT
+  -- to delete a paritular row in atable 
+   DELETE FROM STUDENT WHERE STD_ID='99';
+   --to delete entire data
+   DELETE DROM STUDENT
+
+-------AGGREGATE FUNCTIONS : 
+COUNT()
+--- it counts of all the rows in a specified colunm.
+SELECT COUNT(MARKS) FROM STUDENT;
+
+SUM() 
+ ---Sum function is used to calculate the sum of particilar column
+ SELECT SUM(MARKS) FROM STUDENT;
+ 
+ MAX() 
+ -- TO FIND THE MAXIMUM VALUE IN A PARICULAR COLUMN
+ SELECT MAX(MARKS) FROM STUDENT;
+ 
+ MIN()
+ ---to find th minimum value in aparticular column
+ SELECT MIN(MARKS) FROM STUDENT;
+ 
+ AVG()
+ --  THIS function is used to calculate the AVERAGE of particilar column
+    SELECT AVG(MARKS) FROM STUDENT;
+    
+  ----------ALTER  COMMAND---------
+  The ALTER COMMAND statement is used to add, delete, or modify columns in an existing table.
+   ---to add a column in a table
+  ALTER TABLE TABLENAME ADD COLUNM datatype;
+   ALTER  TABLE STUDENT  ADD ADDRESS VARCHAR(40);
+  
+  --To delete a column in a table,:
+ALTER TABLE TABLENAME,DROP COLUMN CNMAE;
+ALTER  TABLE STUDENT  DROP COLUMN ADDRESS ;
+--TO change the datatype of particular colunm into other type AND SIZE
+   ALTER TABLE TABLENAME  MODIFY  COLUMN CNMAE DATATYPE;
+    ALTER TABLE STUDENT   MODIFY  COLUMN ADDRESS VARCHAR(78);
+---to rename a colunm 
+   UPDATE      
+
+CREATE DATABASE EXERCISE;
+SELECT * FROM CUSTOMER;
+CREATE TABLE CUSTOMER (ID INT PRIMARY KEY,NAME VARCHAR(20),CITY VARCHAR(30),GRADE INT,SALESMAN_ID INT);
+
+INSERT INTO CUSTOMER VALUES (101,'SUNEEL','DELHI',98,201),
+(102,'VAMSI','HYDERABAD',198,202),
+(103,'VISHNU','MUMBAI',79,203),
+(104,'DON','KERALA',178,204),
+(105,'TIRU','KADAPA',200,205),
+(106,'CHARAN','BANGALOOR',100,206),
+(107,'CHINTU','CHENNAI',296,207),
+(108,'RAJESH','KOLKATA',67,208),
+(109,'VINAY','GUJARAT',94,209),
+(110,'SATYABANGARAM','RAJASTAN',168,210);
+
+
+SELECT * FROM CUSTOMER WHERE  GRADE>=100;
+SELECT * FROM CUSTOMER WHERE city= 'KERELA' OR GRADE= NULL;
+SELECT * FROM CUSTOMER WHERE city= 'MUMBAI' OR GRADE>200;
+select name from customer where not city="MUMBAI"  or grade>200;
+
+SELECT * FROM ORDERS WHERE NOT ORD_DATE='2023-04-30' AND SALESMAN_ID>202 OR PURCH_AMT>1000;
+
+Select * from orders where not order_date ="2023-04-30" and (salesman_id>202 or purchase_amt>1000);
+
+select * from salesman where commission between 0.23 and 0.43;
+
+select name from salesman where name like "k%";
+
+-- create a new column address, insert some data in that address column and display all those address as "salesman address" in descending order
+alter table salesman add address varchar(30);
+
+UPDATE SALESMAN  SET ADDRESS= "KURNOOL" WHRERE SAL_ID = 123;
+UPDATE SALESMAN  SET ADDRESS= "ANATAPUR" WHRERE SAL_ID = 133;
+UPDATE SALESMAN  SET ADDRESS= "OOTY" WHRERE SAL_ID = 143;
+UPDATE SALESMAN  SET ADDRESS= "LAKNOL" WHRERE SAL_ID = 153;
+
+ALTER TABLE SALESMAN RENAME COLUMN ADDRESS TO SALESMAN_ADDRESS;  //renaming a column
+
+SELECT ADDRESS AS SALESMAN_ADDRESS FROM SALES_MAN ORDER BY ADDRESS DESC; 
+
