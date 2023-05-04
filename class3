@@ -1,0 +1,92 @@
+"create table employee (
+emp_id int,
+emp_name varchar(250),
+job_name varachr(250),
+manager_id int,
+hire_date datetime,
+salary int,
+dep_id int);" 
+
+
+insert into employee (Emp_id , Emp_name,Job_name,Manager_id,Hire_date,Salary,Dep_id)
+values (123,"hari","nikenduku",1,2020-04-13,23432,34);
+
+
+insert into employee (Emp_id , Emp_name,Job_name,Manager_id,Hire_date,Salary,Dep_id)
+values (121,"harin","anavasaram",2,2020-04-14,234332,35);
+
+
+insert into employee (Emp_id , Emp_name,Job_name,Manager_id,Hire_date,Salary,Dep_id)
+values (120,"harin","bol",3,2020-04-15,2343332,36);
+
+
+select * from employee;
+
+
+
+--select * from employee;
+--employees of all salries 
+--select salary from employee;
+--select distinct job_name from employee;
+--update employee set salary = 2342342 where emp_name = "hari"
+
+
+
+
+
+create table  football (
+venue_id int,
+venue_name varchar(250),
+city_id int,
+capacity int);
+
+
+
+insert into football (venue_id,
+venue_name,
+city_id,
+capacity)
+values(1	,"Wembley Stadium",	1	,90000),
+(2,	"Old Trafford",	2	,75000),
+(3,	"Camp Nou"	,3	,99000),
+(4,	"San Siro"	,4	,80000),
+(5,	"Allianz Arena"	,5	,75000),
+(6,"	Estadio Azteca"	,6	,87222),
+(7,	"Santiago Bernabeu",	3	,81044),
+(8,	"Anfield"	,2,	54074),
+(9,	"Signal Iduna Park",	7	,81359),
+(10,	"Stade de France",	8	,80000);
+
+
+
+select count(venue_name) as count_of_venues 
+from football; 
+
+select venue_name as location ,
+capacity as volume
+from 
+football
+
+-- Online SQL Editor to Run SQL Online.
+-- Use the editor to create new tables, insert data and all other SQL operations.
+  
+
+
+--select * from employee;
+--employees of all salries 
+--select salary from employee;
+--select distinct job_name from employee;
+--update employee set salary = 2342342 where emp_name = "hari"
+--create table  football (
+--venue_id int,
+--venue_name varchar(250),
+--city_id int,
+--capacity int);
+--select count(venue_name) as count_of_venues 
+--from football;
+--select venue_name as location ,
+--capacity as volume
+--from 
+--footballsan
+--delete from football where venue_name = "san siro"
+select  * from football;
